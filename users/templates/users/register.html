@@ -1,0 +1,41 @@
+
+{% extends 'base.html' %}
+{% block contents %}
+
+
+<h1 class="text-2xl font-bold m-10"> 👤 USER REGISTRATION</h1>
+<form action="" method="post" class="card-body w-2/5 shadow-x1 m-10 p-10">
+{% csrf_token %}
+<div class="mb-5">
+    <label class="block text-grey-700 text-sm font-bold mb-2" for="">username</label>
+    <div class="appearance-none shadow border rounded-lg text-grey-800">
+        {{form.username}}
+    </div>
+</div>
+<div class="mb-5">
+    <label class="block text-grey-700 text-sm font-bold mb-2" for="">Email</label>
+    <div class="appearance-none shadow border rounded-lg text-grey-800" >
+        {{form.email}}
+    </div>
+</div>
+<div class="mb-5">
+    <label class="block text-grey-700 text-sm font-bold mb-2" for="">password</label>
+    <div class="appearance-none shadow border rounded-lg text-grey-800">
+        {{form.password1}}
+    </div>
+</div>
+<div class="mb-5">
+    <label class="block text-grey-700 text-sm font-bold mb-2" for="">confirm password</label>
+    <div class="appearance-none shadow border rounded-lg text-grey-800">
+        {{form.password2}}
+    </div>
+</div>
+<div class="mb-5">
+    <input
+            class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+            type="submit"  name=" register" value="register">
+</div>
+
+</form>
+
+{% endblock %}

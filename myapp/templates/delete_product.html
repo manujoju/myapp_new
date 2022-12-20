@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block contents %}
+<h1 class="text-2xl font-bold m-10">🗑️ DELETE PRODUCT</h1>
+<form class="w-2/5 shadow-md m-10 p-10" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="card w-96 bg-base-100 shadow-xl">
+        <figure><img src="{{p.image.url}}" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">{{p.name}}</h2>
+            <p>{{p.desc}}</p>
+            <div class="card-actions justify-end">
+                <button class="btn btn-primary">₹{{p.price}}</button>
+            </div>
+        </div>
+    </div>
+    <div class="mb-8">
+        <input
+            class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+            type="submit" accept="image/*" name="Add product" value="delete product">
+    </div>
+
+</form>
+
+
+{% endblock %}
